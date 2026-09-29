@@ -1,1 +1,32 @@
+//Source for "::" method https://docs.oracle.com/javase/tutorial/java/javaOO/methodreferences.html
+//Source for "p->" ala "Lambda" https://docs.oracle.com/javase/tutorial/java/javaOO/lambdaexpressions.html
 
+
+
+
+   One new Java feature I learned about from this project is lambda expressions and the method to recall it. I had researched this
+topic before but this is my first time seeing it be utilized. I found them in the Main part of the code.
+Statements such as players.forEach(p -> p.heal(1))(Line 41 Main). According to Oracle The p -> syntax creates a lambda expression, which allows a small piece of
+code to be passed into another method. In this example, Java goes through each player in the list and calls the heal method on that player.
+This is similar to using a normal for-each loop, but it can make simple operations shorter and easier to read. I also noticed a related
+feature called a method reference in players.forEach(Player::addPotion)(line 179 Main). Again, According to Oracle, The :: syntax provides a shorter way to reference an
+existing method when that is the only action that needs to happen. I think these features are useful because they can reduce
+repetitive loop code when performing the same action on every object in a collection. Both methods in my opinion are used to make the code
+presentable and readable. Yes, we can make a whole new function but I noticed that only the player might be able to use the "heal" function
+in which the lambda expression would be able to get the job done cleaner. This is why I think these methods are useful. Its our job as
+computer scientist to be efficient and make our code understandable.
+
+
+
+Program Modifications:
+Added lines 90-93:
+                            if (Math.random() < 0.20){
+                                damage *= 2;
+                                System.out.println("Lucky shot, Critical Hit!"); //Added this line to add a bit of luck into the run which could help persons playing with just one character
+                            }
+I decided to add a bit of luck into the game that would help players achieve longer runs and have a better possibility of winning.
+I listed above what I modified, and it was the case 1 block of a player's action. I used ChatGPT to help show me where to put the code
+and a better way to modify it. I liked the ratio approach in adding "chance" to the game and code. At first I struggled because I was
+trying to import random and then call a random number, but I got assistance from ChatGPT to help modify it more cleanly by using the
+Math.random function, as it is a built-in function that returns a random double less than one and greater than or equal to zero, which fit
+my percentage parameter.

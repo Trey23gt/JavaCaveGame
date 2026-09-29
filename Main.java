@@ -85,6 +85,12 @@ public class Main {
                     switch (choice) {
                         case "1":
                             int damage = player.attack();
+
+                            if (Math.random() < 0.20){
+                                damage *= 2;
+                                System.out.println("Lucky shot, Critical Hit!"); //Added this line to add a bit of luck into the run which could help persons playing with just one character
+                            }
+
                             int targetIndex = (int)(Math.random() * goblins.size());
                             Enemy target = goblins.get(targetIndex);
 
